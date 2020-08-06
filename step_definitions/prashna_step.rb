@@ -61,3 +61,17 @@ end
 And(/^User is signed up successfully$/) do
   expect(@fields).to have_content('Signup successful. Please verify your account, to login')
 end
+
+
+And(/^I click My question tab$/) do
+  click_link 'My Questions'
+  click_link 'New Question'
+end
+
+Then(/^I should see the elements of new question form$/) do
+  @question = QuestionsPage.new
+  @question.load
+  @question.wait_until_displayed(@question.title)
+  @question.wait_until_displayed(@question.content)
+  @question.wait_until_displayed(@question.topic)
+end
