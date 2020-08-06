@@ -53,9 +53,6 @@ Then(/^I should see all elements of the page$/) do
   @prashna.has_content?('Password Confirmation')
 end
 
-
-
-
 And(/^I fill with (.*), (.*), (.*) and (.*)$/) do |name, email, passw, confirm_pass|
   @fields.signup_field(name, email, passw, confirm_pass)
   click_button 'Submit'
