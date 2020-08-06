@@ -29,3 +29,9 @@ Scenario: Check the element of signup page
       | rocky@test.com	    | abcd123  |
       | rohit123@example.com| 123a     |
       | tester123@domain.com| 1234a    |
+ Scenario: Checking the New Question elements
+      Given I am on Prashna Site
+      And I click login tab
+      When I enter the credentials to <amail> and <pass>
+      And I click My question tab
+      Then I should see the elements of new question form
