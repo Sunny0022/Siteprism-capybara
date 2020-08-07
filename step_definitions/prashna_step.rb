@@ -16,8 +16,9 @@ And(/^I click login tab$/) do
   @prashna.wait_until_displayed('Home')
   @prashna.wait_until_displayed('Login')
   @prashna.wait_until_displayed('Signup')
-  @prashna.should have_content('Prashna')
+  expect(@prashna).to have_content('Prashna')
   click_link 'Login'
+  Capybara.default_max_wait_time = 5
 
 end
 
@@ -46,12 +47,12 @@ end
 Then(/^I should see all elements of the page$/) do
   @fields = SignUpPage.new
   @fields.load
-  Capybara.default_max_wait_time = 5
   @fields.has_content?('Signup Form')
   @fields.has_content?('Name')
   @fields.has_content?('Email')
   @fields.has_content?('Password')
   @fields.has_content?('Password Confirmation')
+  Capybara.default_max_wait_time = 5
 end
 
 
@@ -65,19 +66,25 @@ end
 
 And(/^User is signed up successfully$/) do
   expect(@fields).to have_content('Signup successful. Please verify your account, to login')
+  Capybara.default_max_wait_time = 5
 end
 
 
 And(/^I click My question tab$/) do
   click_link 'My Questions'
   click_link 'New Question'
+  Capybara.default_max_wait_time = 5
 end
 
 Then(/^I should see the elements of new question form$/) do
   @question = QuestionsPage.new
   @question.load
-  Capybara.default_max_wait_time = 5
   @question.wait_until_displayed(@question.title)
   @question.wait_until_displayed(@question.content)
   @question.wait_until_displayed(@question.topic)
+  Capybara.default_max_wait_time = 5
+  expect(@question.title).to have_content('')
+  expect(@question.topic).to have_content('')
+  expect(@question.content).to have_content('')
+  click_link 'Logout'
 end
