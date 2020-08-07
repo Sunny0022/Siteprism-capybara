@@ -1,10 +1,5 @@
 Feature: Check elements of the Prashna Site
 
-Scenario: Check the element of signup page
-  Given I am on Prashna Site
-  When I click Sign up tab
-  Then I should see all elements of the page
-
 Scenario Outline: Filling the signup field data
   Given I am on Prashna Site
   When I click Sign up tab
