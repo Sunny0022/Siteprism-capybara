@@ -1,4 +1,4 @@
-Feature: Publish New Questions in Prashna Site
+Feature: Check elements of the Prashna Site
 
 Scenario: Check the element of signup page
   Given I am on Prashna Site
