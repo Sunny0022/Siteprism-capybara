@@ -1,7 +1,6 @@
 require 'capybara/cucumber'
 require 'site_prism'
 require 'selenium-webdriver'
-require 'assert'
 require "#{File.dirname(__FILE__)}/../../features/support/pages/prashna_page"
 require "#{File.dirname(__FILE__)}/../../features/support/pages/signup_page"
 Capybara.default_driver = :selenium
